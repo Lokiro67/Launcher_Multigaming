@@ -13,12 +13,12 @@
 
 Route::get('/', function () {
     return view('welcome');
+})->middleware('auth');
+
+
+Auth::routes();
+
+Route::get('/home', function ()
+{
+    return redirect('/');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
